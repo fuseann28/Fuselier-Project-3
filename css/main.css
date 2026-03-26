@@ -1,0 +1,56 @@
+html{
+    background-color: blue;
+}
+
+.bearwbow {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+.bearwbow img {
+    display: block;
+    width: 800px;
+}
+
+.bear{
+    position: relative;
+    z-index: 1;
+}
+.bow{
+   position: absolute;
+    top: 325px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.3);
+    transform-origin: center center;
+    z-index: 2;
+    transition: transform 0.6s ease;
+}
+.bow.rotate {
+    transform: translateX(-50%) scale(0.25) rotate(720deg)
+}
+
+.train {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.train img {
+  position: absolute;
+  bottom: 0;
+  right: -300px;
+  width: 250px;
+  animation: moveTrain 8s linear infinite;
+}
+
+@keyframes moveTrain {
+  0% {
+    right: -300px; 
+  }
+  100% {
+    right: 100%;
+  }
+}
