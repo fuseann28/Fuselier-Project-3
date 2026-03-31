@@ -1,7 +1,27 @@
 html{
-    background-color: blue;
+    background-color: #ffeec3;
+}
+.frame {
+  width: 1200px;   /* wider frame */
+  height: 500px;
+  border: 8px solid #000;
+  padding: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: end; /* bottom-align everything */
+  gap: 40px;
+  background: #f7f7f7;
 }
 
+.bedroom{
+    display: flex;
+    top: 10px;
+    align-items: center;
+    gap: 40px;
+}
 .bearwbow {
     position: relative;
     width: fit-content;
@@ -11,7 +31,7 @@ html{
 
 .bearwbow img {
     display: block;
-    width: 800px;
+    width: 250px;
 }
 
 .bear{
@@ -20,7 +40,7 @@ html{
 }
 .bow{
    position: absolute;
-    top: 325px;
+    top: 105px;
     left: 50%;
     transform: translateX(-50%) scale(0.3);
     transform-origin: center center;
@@ -32,25 +52,37 @@ html{
 }
 
 .train {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: relative; /* now inside the frame */
+  width: 350px;
+  height: 200px; /* gives the train space */
 }
 
 .train img {
   position: absolute;
   bottom: 0;
-  right: -300px;
-  width: 250px;
+  left: 105%; /* start just off the left edge */
+  width: 350px;
   animation: moveTrain 8s linear infinite;
 }
 
 @keyframes moveTrain {
   0% {
-    right: -300px; 
+    left: 105%; /* start off-screen left */
   }
   100% {
-    right: 100%;
+    left: -1700px; /* move across the frame (adjust to frame width) */
   }
 }
+
+.bed img{
+    width: 300px;
+}
+
+.nightstand img {
+  width: 300px; 
+}
+
+.dresser img{
+    width: 300px;
+}
+
