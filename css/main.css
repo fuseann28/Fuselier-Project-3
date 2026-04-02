@@ -2,32 +2,25 @@ html{
     background-color: #ffeec3;
 }
 .frame {
-  width: 1200px;   /* wider frame */
-  height: 500px;
-  border: 8px solid #000;
+  width: 1200px;   
+  height: 700px;
+  border: 8px solid transparent;
   padding: 20px;
   overflow: hidden;
   margin: 0 auto;
-
   display: flex;
   justify-content: center;
-  align-items: end; /* bottom-align everything */
+  align-items: end; 
   gap: 40px;
-  background: #f7f7f7;
+  background: transparent;
 }
 
-.bedroom{
-    display: flex;
-    top: 10px;
-    align-items: center;
-    gap: 40px;
-}
 .bearwbow {
     position: relative;
     width: fit-content;
     margin: 0 auto;
+    bottom: -50px;
 }
-
 
 .bearwbow img {
     display: block;
@@ -52,31 +45,51 @@ html{
 }
 
 .train {
-  position: relative; /* now inside the frame */
+  position: relative; 
   width: 350px;
-  height: 200px; /* gives the train space */
+  height: 200px;
 }
 
 .train img {
   position: absolute;
   bottom: 0;
-  left: 105%; /* start just off the left edge */
+  left: 105%; 
   width: 350px;
   animation: moveTrain 8s linear infinite;
 }
 
 @keyframes moveTrain {
   0% {
-    left: 105%; /* start off-screen left */
+    left: 105%;
   }
   100% {
-    left: -1700px; /* move across the frame (adjust to frame width) */
+    left: -1700px; 
   }
 }
 
-.bed img{
-    width: 300px;
+.bed {
+  position: relative;
+  width: 800px; 
 }
+
+.bed img {
+  display: block;
+  width: 100%;
+}
+
+.pillow {
+  position: absolute;
+  top: -5px; 
+  left: 50%; 
+ transform: translateX(-50%);
+  width: 95px;       
+  z-index: 10;     
+}
+
+.pillow img {
+  width: 100%;
+}
+
 
 .nightstand img {
   width: 300px; 
