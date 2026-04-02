@@ -1,5 +1,5 @@
 html{
-    background-color: #ffeec3;
+    background-color: #afe0ff;
 }
 .frame {
   width: 1200px;   
@@ -8,7 +8,6 @@ html{
   padding: 20px;
   overflow: hidden;
   margin: 0 auto;
-  display: flex;
   justify-content: center;
   align-items: end; 
   gap: 40px;
@@ -16,10 +15,11 @@ html{
 }
 
 .bearwbow {
-    position: relative;
+    position: absolute;
     width: fit-content;
+    left: 0%;
     margin: 0 auto;
-    bottom: -50px;
+    bottom: 50px;
 }
 
 .bearwbow img {
@@ -45,9 +45,11 @@ html{
 }
 
 .train {
-  position: relative; 
+  position: absolute; 
   width: 350px;
   height: 200px;
+  bottom: 0;
+  z-index: 40;
 }
 
 .train img {
@@ -60,29 +62,30 @@ html{
 
 @keyframes moveTrain {
   0% {
-    left: 105%;
+    left: 500%;
   }
   100% {
-    left: -1700px; 
+    left: -1000px; 
   }
 }
 
 .bed {
-  position: relative;
-  width: 800px; 
+  position: absolute;
+  width: 300px; 
+  bottom: 0px;
+  left: 50%;
 }
 
 .bed img {
-  display: block;
   width: 100%;
 }
 
 .pillow {
   position: absolute;
-  top: -5px; 
+  top: 25px; 
   left: 50%; 
- transform: translateX(-50%);
-  width: 95px;       
+  transform: translateX(-50%);
+  width: 175px;       
   z-index: 10;     
 }
 
@@ -90,12 +93,104 @@ html{
   width: 100%;
 }
 
+.pillow:hover {
+  animation: pillowBounce 0.6s ease-out;
+}
+
+
+@keyframes pillowBounce {
+  0%   { transform: translateX(-50%) translateY(0); }
+  30%  { transform: translateX(-50%) translateY(-18px); }
+  60%  { transform: translateX(-50%) translateY(0); }
+  80%  { transform: translateX(-50%) translateY(-18px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
 
 .nightstand img {
+  position: absolute;
   width: 300px; 
+  bottom: 0px;
+  left: 20%;
 }
 
 .dresser img{
-    width: 300px;
+  position: absolute;
+  bottom: 10px;
+  width: 350px;
+  left: 75%;
 }
 
+.lamp {
+  position: absolute;
+  width: 200px; 
+  bottom: 200px;
+  left: 18%;
+   transform: translateX(20%);
+   z-index: 5;
+}
+
+.lamp img {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.lamp-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    #ffe696cc 0%,
+    #ffe69666 40%,
+    #ffe69600 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lamp.on .lamp-glow {
+  opacity: 100;
+}
+
+.lamp-string {
+  position: absolute;
+  bottom: 20px;
+  right: 48%;
+  width: 20px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.clock {
+  position: absolute;
+  width: 250px;        
+  bottom: 145px;   
+  left: 35%;          
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.clock img {
+  width: 100%;
+}
+
+@keyframes ringShake {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.clock.ringing {
+  animation: ringShake 0.4s ease-in-out 4;
+}
