@@ -70,13 +70,11 @@ body {
 }
 
 
-/* ----------------------------------
-   TRAIN
----------------------------------- */
+/* Train */
 .train {
   position: absolute;
-  width: 350px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   bottom: 0;
   z-index: 40;
 }
@@ -85,7 +83,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 105%;
-  width: 350px;
+  width: 500px;
   animation: moveTrain 8s linear infinite;
 }
 
@@ -95,9 +93,7 @@ body {
 }
 
 
-/* ----------------------------------
-   WINDOW
----------------------------------- */
+/* Window */
 .window {
   position: absolute;
   width: 625px;
@@ -111,10 +107,59 @@ body {
   width: 100%;
 }
 
+/* Shelf */
+.shelf{
+  position: absolute;
+  width: 275px;
+  left: 5%;
+  bottom: 350px;
+}
 
-/* ----------------------------------
-   BED + PILLOW
----------------------------------- */
+/* HELICOPTER WRAPPER — controls position */
+.helicopter {
+  position: absolute;
+  width: 125px;
+  left: 18%;
+  bottom: 530px;
+  z-index: 30;
+  cursor: pointer;
+}
+
+/* BASE — moves on hover */
+.base {
+  position: absolute;
+  width: 125px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+/* WINGS — anchored to base, move with it */
+.wings {
+  position: absolute;
+  width: 125px;
+  left: 0;     /* EXACT same anchor point */
+  bottom: 0;   /* EXACT same anchor point */
+  z-index: 2;
+  transition: transform 0.4s ease;
+  /* no rotation */
+}
+
+/* HOVER — both move together */
+.helicopter:hover .base,
+.helicopter:hover .wings {
+  animation: heliFloat 0.8s ease-in-out infinite alternate;
+}
+
+/* FLOAT KEYFRAME */
+@keyframes heliFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+
+/* Bed and Pillow */
 .bed {
   position: absolute;
   width: 375px;
