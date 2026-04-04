@@ -1,51 +1,80 @@
-html{
-    background-color: #afe0ff;
-}
-.frame {
-  width: 1200px;   
-  height: 700px;
-  border: 8px solid transparent;
-  padding: 20px;
-  overflow: hidden;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: end; 
-  gap: 40px;
-  background: transparent;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #a48ae5 0%,
+    #b9a6f2 55%,
+    #8c74d6 75%,
+    #6a54c8 100%
+  );
 }
 
+.room {
+  position: relative;
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+  background: transparent;
+  overflow: visible; 
+}
+
+
+
+
+/* ----------------------------------
+   BEANBAG
+---------------------------------- */
+.beanbag {
+  position: absolute;
+  left: 3%;
+  bottom: 20px;
+  width: 300px;
+}
+
+
+/* ----------------------------------
+   BEAR + BOW
+---------------------------------- */
 .bearwbow {
-    position: absolute;
-    width: fit-content;
-    left: 0%;
-    margin: 0 auto;
-    bottom: 50px;
+  position: absolute;
+  width: fit-content;
+  left: 5%;
+  margin: 0 auto;
+  bottom: 45px;
 }
 
 .bearwbow img {
-    display: block;
-    width: 250px;
+  display: block;
+  width: 250px;
 }
 
-.bear{
-    position: relative;
-    z-index: 1;
+.bear {
+  position: relative;
+  z-index: 1;
 }
-.bow{
-   position: absolute;
-    top: 105px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.3);
-    transform-origin: center center;
-    z-index: 2;
-    transition: transform 0.6s ease;
+
+.bow {
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.3);
+  transform-origin: center center;
+  z-index: 400;
+  cursor: pointer;
+  transition: transform 0.6s ease;
 }
+
 .bow.rotate {
-    transform: translateX(-50%) scale(0.25) rotate(720deg)
+  transform: translateX(-50%) scale(0.25) rotate(720deg);
 }
 
+
+/* ----------------------------------
+   TRAIN
+---------------------------------- */
 .train {
-  position: absolute; 
+  position: absolute;
   width: 350px;
   height: 200px;
   bottom: 0;
@@ -55,25 +84,42 @@ html{
 .train img {
   position: absolute;
   bottom: 0;
-  left: 105%; 
+  left: 105%;
   width: 350px;
   animation: moveTrain 8s linear infinite;
 }
 
 @keyframes moveTrain {
-  0% {
-    left: 500%;
-  }
-  100% {
-    left: -1000px; 
-  }
+  0% { left: 500%; }
+  100% { left: -1000px; }
 }
 
+
+/* ----------------------------------
+   WINDOW
+---------------------------------- */
+.window {
+  position: absolute;
+  width: 625px;
+  left: 58%;
+  bottom: 300px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.window img {
+  width: 100%;
+}
+
+
+/* ----------------------------------
+   BED + PILLOW
+---------------------------------- */
 .bed {
   position: absolute;
-  width: 300px; 
+  width: 375px;
   bottom: 0px;
-  left: 50%;
+  left: 45%;
 }
 
 .bed img {
@@ -82,11 +128,11 @@ html{
 
 .pillow {
   position: absolute;
-  top: 25px; 
-  left: 50%; 
+  top: 25px;
+  left: 50%;
   transform: translateX(-50%);
-  width: 175px;       
-  z-index: 10;     
+  width: 200px;
+  z-index: 10;
 }
 
 .pillow img {
@@ -95,8 +141,8 @@ html{
 
 .pillow:hover {
   animation: pillowBounce 0.6s ease-out;
+  cursor: pointer;
 }
-
 
 @keyframes pillowBounce {
   0%   { transform: translateX(-50%) translateY(0); }
@@ -107,27 +153,39 @@ html{
 }
 
 
+/* ----------------------------------
+   NIGHTSTAND
+---------------------------------- */
 .nightstand img {
   position: absolute;
-  width: 300px; 
+  width: 275px;
   bottom: 0px;
-  left: 20%;
+  left: 25%;
 }
 
-.dresser img{
+
+/* ----------------------------------
+   DRESSER
+---------------------------------- */
+.dresser img {
   position: absolute;
   bottom: 10px;
-  width: 350px;
-  left: 75%;
+  width: 450px;
+  height: 475px;
+  left: 70%;
 }
 
+
+/* ----------------------------------
+   LAMP
+---------------------------------- */
 .lamp {
   position: absolute;
-  width: 200px; 
-  bottom: 200px;
-  left: 18%;
-   transform: translateX(20%);
-   z-index: 5;
+  width: 200px;
+  bottom: 180px;
+  left: 23%;
+  transform: translateX(20%);
+  z-index: 28;
 }
 
 .lamp img {
@@ -138,43 +196,47 @@ html{
 
 .lamp-glow {
   position: absolute;
-  top: -10%;
+  bottom: 35px;
   left: 50%;
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   transform: translateX(-50%);
   background: radial-gradient(
     circle,
     #ffe696cc 0%,
     #ffe69666 40%,
-    #ffe69600 70%
+    #ffe69600 75%
   );
-  opacity: 0;
+  opacity: 0%;
   transition: opacity 0.4s ease;
-  z-index: 1;
+  z-index: 1; /* glow sits under lamp image but above EVERYTHING else */
   pointer-events: none;
 }
 
+
 .lamp.on .lamp-glow {
-  opacity: 100;
+  opacity: 1;
 }
 
 .lamp-string {
   position: absolute;
-  bottom: 20px;
-  right: 48%;
+  bottom: 40px;
+  left: 55%;
   width: 20px;
   height: 60px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 30;
 }
 
+
+/* ----------------------------------
+   CLOCK
+---------------------------------- */
 .clock {
   position: absolute;
-  width: 250px;        
-  bottom: 145px;   
-  left: 35%;          
-  transform: translateX(-50%);
+  width: 70px;
+  bottom: 215px;
+  left: 38%;
   z-index: 5;
 }
 
@@ -183,14 +245,32 @@ html{
 }
 
 @keyframes ringShake {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(-10deg); }
-  40% { transform: rotate(10deg); }
-  60% { transform: rotate(-10deg); }
-  80% { transform: rotate(10deg); }
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(-15deg); }
+  30%  { transform: rotate(15deg); }
+  45%  { transform: rotate(-15deg); }
+  50%  { transform: rotate(15deg); }
+  60%  { transform: rotate(-15deg); }
+  70%  { transform: rotate(15deg); }
+  80%  { transform: rotate(-15deg); }
+  85%  { transform: rotate(15deg); }
+  90%  { transform: rotate(-15deg); }
+  95%  { transform: rotate(15deg); }
   100% { transform: rotate(0deg); }
 }
 
 .clock.ringing {
-  animation: ringShake 0.4s ease-in-out 4;
+  animation: ringShake 9s ease-in-out;
 }
+
+
+/* ----------------------------------
+   SHADOWS
+---------------------------------- */
+.bearwbow,
+.bed,
+.train {
+  filter: drop-shadow(0 8px 6px #00000040);
+}
+
+
