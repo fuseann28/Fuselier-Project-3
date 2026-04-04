@@ -19,12 +19,7 @@ body {
   overflow: visible; 
 }
 
-
-
-
-/* ----------------------------------
-   BEANBAG
----------------------------------- */
+/* Beanbag */
 .beanbag {
   position: absolute;
   left: 3%;
@@ -32,10 +27,7 @@ body {
   width: 300px;
 }
 
-
-/* ----------------------------------
-   BEAR + BOW
----------------------------------- */
+/* Bear */
 .bearwbow {
   position: absolute;
   width: fit-content;
@@ -115,7 +107,7 @@ body {
   bottom: 350px;
 }
 
-/* HELICOPTER WRAPPER — controls position */
+/* Helicopter */
 .helicopter {
   position: absolute;
   width: 125px;
@@ -125,7 +117,6 @@ body {
   cursor: pointer;
 }
 
-/* BASE — moves on hover */
 .base {
   position: absolute;
   width: 125px;
@@ -135,31 +126,26 @@ body {
   transition: transform 0.4s ease;
 }
 
-/* WINGS — anchored to base, move with it */
 .wings {
   position: absolute;
   width: 125px;
-  left: 0;     /* EXACT same anchor point */
-  bottom: 0;   /* EXACT same anchor point */
+  left: 0;  
+  bottom: 0;  
   z-index: 2;
   transition: transform 0.4s ease;
-  /* no rotation */
 }
 
-/* HOVER — both move together */
 .helicopter:hover .base,
 .helicopter:hover .wings {
   animation: heliFloat 0.8s ease-in-out infinite alternate;
 }
 
-/* FLOAT KEYFRAME */
 @keyframes heliFloat {
   0%   { transform: translateY(0); }
   100% { transform: translateY(-12px); }
 }
 
-
-/* Bed and Pillow */
+/* Bed  */
 .bed {
   position: absolute;
   width: 375px;
@@ -197,10 +183,7 @@ body {
   100% { transform: translateX(-50%) translateY(0); }
 }
 
-
-/* ----------------------------------
-   NIGHTSTAND
----------------------------------- */
+/* Nightstand */
 .nightstand img {
   position: absolute;
   width: 275px;
@@ -208,10 +191,7 @@ body {
   left: 25%;
 }
 
-
-/* ----------------------------------
-   DRESSER
----------------------------------- */
+/* Dresser */
 .dresser img {
   position: absolute;
   bottom: 10px;
@@ -220,10 +200,7 @@ body {
   left: 70%;
 }
 
-
-/* ----------------------------------
-   LAMP
----------------------------------- */
+/* Lamp */
 .lamp {
   position: absolute;
   width: 200px;
@@ -254,8 +231,7 @@ body {
   );
   opacity: 0%;
   transition: opacity 0.4s ease;
-  z-index: 1; /* glow sits under lamp image but above EVERYTHING else */
-  pointer-events: none;
+  z-index: 1;
 }
 
 
@@ -273,10 +249,7 @@ body {
   z-index: 30;
 }
 
-
-/* ----------------------------------
-   CLOCK
----------------------------------- */
+/* Clock */
 .clock {
   position: absolute;
   width: 70px;
@@ -308,10 +281,7 @@ body {
   animation: ringShake 9s ease-in-out;
 }
 
-
-/* ----------------------------------
-   SHADOWS
----------------------------------- */
+/* Shadows */
 .bearwbow,
 .bed,
 .train {
